@@ -1,52 +1,3 @@
-// ===============================
-// Data limite para confirmação
-// ===============================
-
-const dataLimite = new Date("2026-09-16T23:59:59");
-
-if (new Date() > dataLimite) {
-
-    document.body.innerHTML = `
-    <div style="
-        min-height:100vh;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        background:#2d2d2d;
-        color:white;
-        font-family:Poppins,sans-serif;
-        text-align:center;
-        padding:30px;
-    ">
-        <div style="
-            max-width:700px;
-            background:rgba(255,255,255,.08);
-            backdrop-filter:blur(10px);
-            border-radius:20px;
-            padding:40px;
-            border:1px solid rgba(255,255,255,.2);
-        ">
-            <h1 style="font-family:'Cormorant Garamond',serif;font-size:50px;">
-                💍 Confirmações encerradas
-            </h1>
-
-            <p style="font-size:22px;line-height:1.8;margin-top:20px;">
-                O prazo para confirmação de presença foi encerrado.<br><br>
-
-                Agradecemos imensamente o carinho e desejamos que Deus abençoe cada um de vocês. ❤️
-            </p>
-
-            <h2 style="margin-top:30px;font-family:'Cormorant Garamond',serif;">
-                Marcelo & Lucimara
-            </h2>
-        </div>
-    </div>
-    `;
-
-    throw new Error("Prazo encerrado");
-}
-
-
 const btnSim = document.querySelector(".sim");
 const btnNao = document.querySelector(".nao");
 const resultado = document.querySelector("#resultado");
@@ -85,7 +36,8 @@ async function enviar(resposta){
         resultado.innerHTML=`
         ❤️<br><br>
         Obrigado, <strong>${nome.value}</strong>!<br><br>
-        Sua resposta foi registrada com sucesso.
+        Sua resposta foi registrada com sucesso.<br><br>
+        Por favor, confirme apenas uma vez.🙏
         `;
 
         btnSim.disabled=true;
